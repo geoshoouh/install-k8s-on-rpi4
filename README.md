@@ -23,7 +23,7 @@ nmcli device wifi connect <wifi-name> password <wifi-password>
 ```
 dnf update -y
 ```
-9. Set up `ssh`
+9. Enable `ssh`
 ```
 systemctl enable --now sshd
 ```
