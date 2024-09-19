@@ -25,7 +25,6 @@ dnf update -y
 ```
 9. Set up `ssh`
 ```
-dnf install -y openssh-server
 systemctl enable --now sshd
 ```
 
