@@ -2,7 +2,7 @@
 
 ## Initial Setup
 
-1. Flash RPI OL8 to SD card
+1. Flash RPI OL8 or OL9 to SD card
 2. Insert card and boot
 3. Login; username: `root`; password; `oracle`
 4. Change password
