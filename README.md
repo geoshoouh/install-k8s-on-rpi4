@@ -27,6 +27,7 @@ dnf update -y
 ```
 systemctl enable --now sshd
 ```
+*NOTE: if you're running OL9 you will have to go to /etc/ssh/sshd_config and ensure that `PermitRootLogin` is set to `yes` for ssh to work*
 
 ## Install Container Runtime
 
