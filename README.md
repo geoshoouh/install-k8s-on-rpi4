@@ -39,6 +39,8 @@ ssh root@<rpi-ip>
 ```
 dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo
 ```
+
+*NOTE: if using OL9, you will need to run `dnf install 'dnf-command(config-manager)'` first*
 12. Install `containerd`
 ```
 dnf install -y containerd.io
