@@ -36,11 +36,11 @@ systemctl enable --now sshd
 ssh root@<rpi-ip>
 ```
 11. Add docker repo for containerd
+    
+*NOTE: if using OL9, you will need to run `dnf install 'dnf-command(config-manager)'` first*
 ```
 dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo
 ```
-
-*NOTE: if using OL9, you will need to run `dnf install 'dnf-command(config-manager)'` first*
 
 12. Install `containerd`
 ```
