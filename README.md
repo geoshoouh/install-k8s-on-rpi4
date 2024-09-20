@@ -7,6 +7,8 @@
 
 ## Initial Setup
 
+*NOTE: This document assumes you are the root user*
+
 1. Flash RPI OL8 or OL9 to SD card
 2. Insert card and boot
 3. Login; username: `root`; password; `oracle`
@@ -106,13 +108,32 @@ sysctl --system
 systemctl enable --now kubelet
 ```
 
+## Firewalld
+
+18. Install and add necessary ports
+```
+dnf install -y firewalld
+systemctl enable --now firewalld
+
+for port in \
+6443/tcp \
+2379-2380/tcp \
+10250/tcp \
+10251/tcp \
+10252/tcp \
+10255/tcp \
+5473/tcp; \
+do firewall-cmd --zone=public --permanent --add-port=$port; \
+done
+```
+
 ## Start Master Node
 
-18. Init k8s
+19. Init k8s
 ```
 kubeadm init --pod-network-cidr=192.168.0.0/16
 ```
-19. Setup KUBECONFIG
+20. Setup KUBECONFIG
 ```
 mkdir -p $HOME/.kube 
 cp -i /etc/kubernetes/admin.conf $HOME/.kube/config  
@@ -121,7 +142,7 @@ chown $(id -u):$(id -g) $HOME/.kube/config
 
 ## Install CNI
 
-20. Install Calico
+21. Install Calico
 ```
 kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.28.1/manifests/tigera-operator.yaml
 kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.28.1/manifests/custom-resources.yaml
@@ -129,16 +150,18 @@ kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.28.1
 
 ## Join Worker Node
 
-21. Ensure hostname of worker is unique
+22. Ensure hostname of worker is unique
 ```
 hostnamectl set-hostname rpi2
 ```
 
-22. Get join command from master node 
+23. Configure firewalld
+    
+24. Get join command from master node 
 ```
 kubeadm token create --print-join-command
 ```
-23. Copy and execute on a worker
+25. Copy and execute on a worker
 
 resources:
 - https://docs.oracle.com/en/learn/oracle-linux-install-rpi/#customize-the-image-as-appropriate  
