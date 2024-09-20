@@ -145,4 +145,5 @@ resources:
 - https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/
 - https://swapnasagarpradhan.medium.com/install-a-kubernetes-cluster-on-rhel8-with-conatinerd-b48b9257877a 
 - https://superuser.com/questions/1738739/unable-to-initialize-kubeadm 
-- https://facsiaginsa.com/kubernetes/join-existing-kubernetes-cluster 
+- https://facsiaginsa.com/kubernetes/join-existing-kubernetes-cluster
+- https://infotechys.com/install-a-kubernetes-cluster-on-rhel-9/
