@@ -47,6 +47,10 @@ dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce
 dnf install -y containerd.io
 mkdir -p /etc/containerd
 containerd config default > /etc/containerd/config.toml
+```
+*NOTE: If using OL9, go into `/etc/containerd/config.toml` and change `SystemdCgroup` to true*
+
+```
 systemctl enable --now containerd
 ```
 
