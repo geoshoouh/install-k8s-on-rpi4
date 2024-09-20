@@ -2,7 +2,7 @@
 
 ## Requirements
 - One or more Raspberry Pi 4s
-- Reasonably sized micro sd card (author using 128GB)
+- Reasonably sized micro sd card(s) (author using 128GB)
 - Oracle Linux 8 or Oracle Linux 9 images (https://www.oracle.com/linux/downloads/linux-arm-downloads.html#) 
 
 ## Initial Setup
