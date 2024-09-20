@@ -122,7 +122,9 @@ for port in \
 10251/tcp \
 10252/tcp \
 10255/tcp \
-5473/tcp; \
+5473/tcp \
+179/tcp \
+2379/tcp; \
 do firewall-cmd --zone=public --permanent --add-port=$port; \
 done
 ```
