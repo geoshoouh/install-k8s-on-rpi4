@@ -1,5 +1,10 @@
 # The Definitive Guide to Setting up a Raspberry Pi K8s cluster
 
+## Requirements
+- Rasberry Pi 4
+- Reasonably sized micro sd card (author using 128GB)
+- Oracle Linux 8 or Oracle Linux 9 images (https://www.oracle.com/linux/downloads/linux-arm-downloads.html#) 
+
 ## Initial Setup
 
 1. Flash RPI OL8 or OL9 to SD card
