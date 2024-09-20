@@ -77,6 +77,8 @@ net.bridge.bridge-nf-call-ip6tables = 1
 EOF
 ```
 16. Disable swap (also don't know why, but you have to do this)
+
+Comment out the line that mentions `swap` in /etc/fstab, then do
 ```
 cat <<EOF | tee /etc/modules-load.d/k8s.conf
 overlay
@@ -87,9 +89,6 @@ modprobe overlay
 modprobe br_netfilter
 
 swapoff -a
-
-#sed -i 's|^/swap.img|#/swap.img|g' /etc/fstab
-# You need to actually go to the file and comment out the line that has swap in it; the line above won't do it. This might even be the only thing you need to so before the next command
 
 sysctl --system
 ```
