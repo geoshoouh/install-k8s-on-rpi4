@@ -126,6 +126,10 @@ for port in \
 179/tcp; \
 do firewall-cmd --zone=public --permanent --add-port=$port; \
 done
+
+firewall-cmd --zone=public --permanent --add-protocol=4
+
+firewall-cmd --reload
 ```
 
 ## Start Master Node
