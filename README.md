@@ -124,11 +124,16 @@ kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.28.1
 
 ## Join Worker Node
 
-21. Get join command from master node 
+21. Ensure hostname of worker is unique
+```
+hostnamectl set-hostname rpi2
+```
+
+22. Get join command from master node 
 ```
 kubeadm token create --print-join-command
 ```
-22. Copy and execute on a worker
+23. Copy and execute on a worker
 
 resources:
 - https://docs.oracle.com/en/learn/oracle-linux-install-rpi/#customize-the-image-as-appropriate  
